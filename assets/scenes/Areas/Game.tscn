@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bch61fpcsrfff"]
+
+[ext_resource type="Texture2D" uid="uid://jxctq4w7vn3r" path="res://assets/sprites/[FREE] Industrial Tileset/FREE/5. Industrial Tileset - Starter Pack 32p/1_Industrial_Tileset_1.png" id="1_8bvku"]
+[ext_resource type="PackedScene" uid="uid://06kgqbwoj3if" path="res://assets/scenes/player.tscn" id="2_ns664"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ns664"]
+texture = ExtResource("1_8bvku")
+texture_region_size = Vector2i(32, 32)
+0:1/size_in_atlas = Vector2i(3, 3)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48.54475, -48.09317, 48.544754, -48.544754, 47.641594, 48.544754, -47.641594, 47.641594)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48.09317, -16.03106, 48.093178, -16.03106, 48.544754, 16.03106, -47.641594, 16.03106)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/size_in_atlas = Vector2i(1, 3)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.115868, -48.13694, 15.694538, -48.13694, 16.198349, 47.933884, -16.115868, 48.13694)
+4:0/size_in_atlas = Vector2i(2, 4)
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4wic6"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_ns664")
+
+[node name="Area1" type="Node2D" unique_id=715393876]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=2111267285]
+texture_filter = 1
+tile_set = SubResource("TileSet_4wic6")
+format = 2
+layer_0/tile_data = PackedInt32Array(1, 1, 0, 65534, 1, 0, 4, 1, 0, 65531, 1, 0, -65530, 196609, 0, -7, 196609, 0, -9, 1, 0, -65528, 1, 0, -131084, 1, 0, -131061, 1, 0, -196594, 1, 1, -393200, 196609, 1, -65547, 196609, 1, -262158, 196609, 1, -327672, 1, 0, -393213, 1, 0, -393218, 1, 0, -196609, 1, 0)
+
+[node name="CharacterBody2D" parent="." unique_id=1911954140 instance=ExtResource("2_ns664")]

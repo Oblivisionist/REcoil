@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://06kgqbwoj3if"]
+
+[ext_resource type="Texture2D" uid="uid://be5t7mf2yavnf" path="res://assets/sprites/[FREE] Industrial Tileset/FREE/6. Character Animations 32p/Anim_Robot_Jump1_v1.1_frames/1.png" id="1_rwm0n"]
+[ext_resource type="Script" uid="uid://b3y0gvv22irwj" path="res://assets/scripts/player.gd" id="1_s027a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s027a"]
+radius = 13.0
+height = 38.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14505"]
+atlas = ExtResource("1_rwm0n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wcc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14505")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1911954140]
+script = ExtResource("1_s027a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=679857346]
+position = Vector2(0, -19)
+shape = SubResource("CapsuleShape2D_s027a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=944053443]
+position = Vector2(-5, -24.000002)
+scale = Vector2(1.9374999, 1.4687501)
+sprite_frames = SubResource("SpriteFrames_4wcc8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1307372390]
+zoom = Vector2(2, 2)
